@@ -10,7 +10,7 @@ namespace ADTDemo
     {
         static void Main(string[] args)
         {
-            AncLecturer[] lecturers = {
+            /*AncLecturer[] lecturers = {
                 new AncLecturer() { 
                     FirstName = "Kanchana",
                     LastName = "Senadheera",
@@ -26,7 +26,26 @@ namespace ADTDemo
             };
 
             EducationInstitute anc = new EducationInstitute();
-            anc.LecturerPanel = lecturers;
+            anc.LecturerPanel = lecturers;*/
+            MyByteStack stack = new MyByteStack(3);
+
+            stack.Push(13);
+            stack.Push(-9);
+            stack.Push(23);
+            stack.Push(-56); // Will display error message
+
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+
+            stack.Push(17);
+            stack.Push(21);
+
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.ReadLine();
         }
     }
 }
