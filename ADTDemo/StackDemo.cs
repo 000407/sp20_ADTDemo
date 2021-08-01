@@ -1,11 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ADTDemo
 {
+    class StackDemo {
+        public static void DemoMain(string[] args) {
+            MyByteStack stack = new MyByteStack(3);
+
+            stack.Push(13);
+            stack.Push(-9);
+            stack.Push(23);
+            stack.Push(-56); // Will display error message
+
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+
+            stack.Push(17);
+            stack.Push(21);
+
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+        }
+    }
+
     interface IStack {
         void Push(sbyte item);
 
