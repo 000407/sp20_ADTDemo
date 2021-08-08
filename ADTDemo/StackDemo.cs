@@ -23,6 +23,20 @@ namespace ADTDemo
             Console.WriteLine(stack.Pop());
             Console.WriteLine(stack.Pop());
         }
+
+        public static void GenericStackDemoMain(string[] args) {
+            MyStack<string> myStringStack = new MyStack<string>(5); // Instance of MyStack that lets you put string values
+
+            myStringStack.Push("10.01D");
+            myStringStack.Push("20.015");
+
+            MyStack<double> myDoubleStack = new MyStack<double>(10); // Instance of MyStack that lets you put double values
+
+            myDoubleStack.Push(10.01D);
+            myDoubleStack.Push(20.015);
+            
+            MyStack<CompactDisc> myCDBulk = new MyStack<CompactDisc>(50); // Instance of MyStack that lets you put CDs in that
+        }
     }
 
     interface IStack {
@@ -31,6 +45,18 @@ namespace ADTDemo
         sbyte Pop();
 
         sbyte Peek();
+
+        bool IsFull();
+
+        bool IsEmpty();
+    }
+
+    interface IGenericStack<T> {
+        void Push(T item);
+
+        T Pop();
+
+        T Peek();
 
         bool IsFull();
 
@@ -72,6 +98,52 @@ namespace ADTDemo
         }
 
         public bool IsEmpty() {
+            return top == -1;
+        }
+    }
+
+    class MyStack<T> : IGenericStack<T> {
+        private T[] stackArray; // Storage of stack data in the memory
+        private sbyte top; // Always points to the TOP OF THE STACK
+
+        public MyStack(sbyte stackSize)
+        {
+            stackArray = new T[stackSize];
+            top = -1; // At the beginning, stack has NOTHING. That's why to pointer TOP is set to -1
+        }
+
+        public void Push(T item)
+        {
+            if (IsFull())
+            {
+                Console.WriteLine("Stack is already full!");
+                return;
+            }
+            stackArray[++top] = item;
+        }
+
+        public T Pop()
+        {
+            if (!IsEmpty())
+            {
+                return stackArray[top--];
+            }
+            Console.WriteLine("Stack is already empty!");
+            return default;
+        }
+
+        public T Peek()
+        {
+            return stackArray[top];
+        }
+
+        public bool IsFull()
+        {
+            return top == stackArray.Length - 1;
+        }
+
+        public bool IsEmpty()
+        {
             return top == -1;
         }
     }
