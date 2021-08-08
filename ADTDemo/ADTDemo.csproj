@@ -46,6 +46,7 @@
     <Compile Include="CompactDisc.cs" />
     <Compile Include="EducationInstitutes.cs" />
     <Compile Include="GenericsDemo.cs" />
+    <Compile Include="LinkedListDemo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StackDemo.cs" />

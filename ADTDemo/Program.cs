@@ -8,8 +8,9 @@ namespace ADTDemo
         {
             /*EducationInstitutesDemo.DemoMain(args);*/
             /*StackDemo.DemoMain(args);*/
-            GenericsDemo.DemoMain(args);
+            //GenericsDemo.DemoMain(args);
 
+            LinkedListDemo.LinkedListDemoMain(args);
             Console.ReadLine();
         }
     }
