@@ -37,6 +37,8 @@ namespace ADTDemo
         void Add(T item);
 
         void Print();
+
+        T Remove();
     }
 
     class LinkedList<T> : ILinkedList<T> {
@@ -45,12 +47,12 @@ namespace ADTDemo
         }
 
         public ListItem<T> Head {
-            get; set;
+            get; private set;
         }
 
         public ListItem<T> Tail
         {
-            get; set;
+            get; private set;
         }
 
         public void Add(T item) {
@@ -63,6 +65,36 @@ namespace ADTDemo
                 Tail.Next = new ListItem<T>(item);
                 Tail = Tail.Next;
             }
+        }
+
+        public T Remove() {
+            if (Head == null)
+            {
+                Console.WriteLine("List is already empty!");
+                return default;
+            }
+
+            T val = Head.Value;
+
+            if (Head.Next == null)
+            { //There's only one item in the list; Head and Tail both points to the same.
+                Head = null;
+            }
+            else
+            { //There are more than one item in the list
+                ListItem<T> tmp = Head;
+
+                while (tmp.Next != Tail)
+                {
+                    tmp = tmp.Next;
+                }
+
+                val = Tail.Value;
+                Tail = tmp; // Set the item before the current tail as the new tail
+                Tail.Next = null; // Detach previous tail from the list. That becomes a stray object (garbage)
+            }
+
+            return val;
         }
 
         public void Print() {

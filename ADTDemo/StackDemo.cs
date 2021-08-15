@@ -189,32 +189,7 @@ namespace ADTDemo
 
         public T Pop()
         {
-            if (IsEmpty())
-            {
-                Console.WriteLine("Stack is already empty!");
-                return default;
-            }
-
-            T val = stackLinkedList.Head.Value;
-
-            if (stackLinkedList.Head.Next == null)
-            { //There's only one item in the list; Head and Tail both points to the same.
-                stackLinkedList.Head = null;
-            }
-            else
-            { //There are more than one item in the list
-                ListItem<T> tmp = stackLinkedList.Head;
-            
-                while (tmp.Next != stackLinkedList.Tail) { 
-                    tmp = tmp.Next;
-                }
-
-                val = stackLinkedList.Tail.Value;
-                stackLinkedList.Tail = tmp; // Set the item before the current tail as the new tail
-                stackLinkedList.Tail.Next = null; // Detach previous tail from the list. That becomes a stray object (garbage)
-            }
-
-            return val;
+            return stackLinkedList.Remove();
         }
 
         public void Push(T item)
