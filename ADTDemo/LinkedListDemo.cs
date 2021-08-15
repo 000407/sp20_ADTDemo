@@ -10,10 +10,10 @@ namespace ADTDemo
     {
         public static void LinkedListDemoMain(string[] args) {
             LinkedList<int> myIntList = new LinkedList<int>();
-            myIntList.Head = new ListItem<int>(35);
-            myIntList.Head.Next = new ListItem<int>(75);
-            myIntList.Head.Next.Next = new ListItem<int>(50);
-            myIntList.Head.Next.Next.Next = new ListItem<int>(20);
+            myIntList.Add(35); //myIntList.Head = new ListItem<int>(35);
+            myIntList.Add(75); //myIntList.Head.Next = new ListItem<int>(75);
+            myIntList.Add(50); //myIntList.Head.Next.Next = new ListItem<int>(50);
+            myIntList.Add(20); //myIntList.Head.Next.Next.Next = new ListItem<int>(20);
 
             myIntList.Print();
         }
@@ -57,9 +57,11 @@ namespace ADTDemo
             if (Head == null)
             { //Head is null means the list is empty
                 Head = new ListItem<T>(item);
+                Tail = Head;
             }
             else { //The list isn't empty. Add new item after the tail
                 Tail.Next = new ListItem<T>(item);
+                Tail = Tail.Next;
             }
         }
 
