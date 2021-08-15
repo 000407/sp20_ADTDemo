@@ -39,7 +39,7 @@ namespace ADTDemo
         void Print();
     }
 
-    class LinkedList<T> :ILinkedList<T> {
+    class LinkedList<T> : ILinkedList<T> {
         public int Size {
             get; private set;
         }
@@ -72,6 +72,6 @@ namespace ADTDemo
                 Console.Write(tmp.Value.ToString() + "~>");
                 tmp = tmp.Next;
             }
-         }
+        }
     }
 }

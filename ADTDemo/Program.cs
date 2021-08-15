@@ -10,7 +10,8 @@ namespace ADTDemo
             /*StackDemo.DemoMain(args);*/
             //GenericsDemo.DemoMain(args);
 
-            LinkedListDemo.LinkedListDemoMain(args);
+            //LinkedListDemo.LinkedListDemoMain(args);
+            StackDemo.GenericLinkedStackDemoMain(args);
             Console.ReadLine();
         }
     }
