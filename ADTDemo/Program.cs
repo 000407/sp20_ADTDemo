@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ADTDemo.DoublyLinkedList;
+using System;
 
 namespace ADTDemo
 {
@@ -11,7 +12,8 @@ namespace ADTDemo
             //GenericsDemo.DemoMain(args);
 
             //LinkedListDemo.LinkedListDemoMain(args);
-            StackDemo.GenericLinkedStackDemoMain(args);
+            //StackDemo.GenericLinkedStackDemoMain(args);
+            DoublyLinkedListDemo.DoublyLinkedListDemoMain(args);
             Console.ReadLine();
         }
     }

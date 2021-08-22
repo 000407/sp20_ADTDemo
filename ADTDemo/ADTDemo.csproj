@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompactDisc.cs" />
+    <Compile Include="DoublyLinkedListDemo.cs" />
     <Compile Include="EducationInstitutes.cs" />
+    <Compile Include="ExceptionHandlingDemo.cs" />
     <Compile Include="GenericsDemo.cs" />
     <Compile Include="LinkedListDemo.cs" />
     <Compile Include="Program.cs" />
