@@ -1,4 +1,5 @@
 ﻿using ADTDemo.DoublyLinkedList;
+using ADTDemo.SeachingDemo;
 using System;
 
 namespace ADTDemo
@@ -13,7 +14,9 @@ namespace ADTDemo
 
             //LinkedListDemo.LinkedListDemoMain(args);
             //StackDemo.GenericLinkedStackDemoMain(args);
-            DoublyLinkedListDemo.DoublyLinkedListDemoMain(args);
+            //DoublyLinkedListDemo.DoublyLinkedListDemoMain(args);
+            //SearchingDemo.SearchingDemoMain(args);
+            SortingDemo.SortingDemoMain(args);
             Console.ReadLine();
         }
     }

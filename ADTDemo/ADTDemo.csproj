@@ -51,6 +51,8 @@
     <Compile Include="LinkedListDemo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchingDemo.cs" />
+    <Compile Include="SortingDemo.cs" />
     <Compile Include="StackDemo.cs" />
   </ItemGroup>
   <ItemGroup>
